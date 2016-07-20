@@ -19,10 +19,26 @@ public class MainActivity extends ActionBarActivity {
 
     /**
      * This method is called when the order button is clicked.
-     */
-    public void submitOrder(View view) {
-        display(4*4);
-        displayPrice(16*5);
+     */ int i = 0;
+        public void submitOrder (View view){
+        String priceMessage = "Free";
+            displayMessage(priceMessage);
+    }
+
+    public void increment(View view) {
+
+            i++;
+            display(i);
+            displayPrice(i * 5);
+
+    }
+
+    public void decrement(View view) {
+
+            i--;
+            display(i);
+            displayPrice(i * 5);
+
     }
 
     /**
@@ -38,7 +54,14 @@ public class MainActivity extends ActionBarActivity {
      * This method displays the given price on the screen.
      */
     private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_viewr);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_viewr);
+        priceTextView.setText(message);
     }
 }
